@@ -30,7 +30,10 @@ jobs:
         run: test -z $(go fmt ./...)
 
       - name: Install staticcheck
-        run: go install honnef.co/go/tools/cmd/staticcheck@latest
+        run: |
+          go install honnef.co/go/tools/cmd/staticcheck@latest
+          echo "${{ github.workspace }}/go/bin" >> $GITHUB_PATH
+          echo "/home/runner/go/bin" >> $GITHUB_PATH
 
-      - name: Lint
+      - name: Staticcheck
         run: staticcheck ./...
