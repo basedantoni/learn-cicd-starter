@@ -17,7 +17,8 @@ func TestGetApiKey(t *testing.T) {
 		t.Fatalf("expected: nil, got: %v", err)
 	}
 
-	if !reflect.DeepEqual(key, "1234") {
-		t.Fatalf("expected: 12345, got: %s", key)
+	expect := "12345"
+	if !reflect.DeepEqual(key, expect) {
+		t.Fatalf("expected: %s, got: %s", expect, key)
 	}
 }
