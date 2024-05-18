@@ -22,8 +22,8 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.x'
-      
+          python-version: '3.7'
+
       - name: auth
         uses: google-github-actions/auth@v2
         with:
@@ -32,7 +32,7 @@ jobs:
       - name: Set up Cloud SDK
         uses: google-github-actions/setup-gcloud@v2
         with:
-          version: '360.0.0'
+          version: '350.0.0'
 
       - name: Use gcloud CLI
         run: gcloud info
